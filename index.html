@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIG SEARCH</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#050505;
+color:white;
+font-family:'Inter',sans-serif;
+overflow:hidden;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+.bg{
+position:absolute;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05), transparent 25%),
+radial-gradient(circle at 80% 30%, rgba(255,255,255,0.04), transparent 20%),
+radial-gradient(circle at 50% 80%, rgba(255,255,255,0.03), transparent 20%);
+animation:bgmove 8s infinite alternate ease-in-out;
+}
+
+@keyframes bgmove{
+from{transform:scale(1);}
+to{transform:scale(1.08);}
+}
+
+.grid{
+position:absolute;
+inset:0;
+background-image:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:40px 40px;
+mask-image:linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
+}
+
+.container{
+position:relative;
+z-index:10;
+width:min(92%,900px);
+padding:70px;
+border:1px solid rgba(255,255,255,0.12);
+border-radius:28px;
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(20px);
+text-align:center;
+box-shadow:
+0 0 40px rgba(255,255,255,0.05),
+inset 0 0 30px rgba(255,255,255,0.03);
+}
+
+.logo{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:25px;
+margin-bottom:35px;
+}
+
+.circle{
+width:80px;
+height:80px;
+border:6px solid white;
+border-radius:50%;
+position:relative;
+}
+
+.circle::after{
+content:'';
+position:absolute;
+width:40px;
+height:6px;
+background:white;
+border-radius:10px;
+transform:rotate(45deg);
+right:-22px;
+bottom:-6px;
+}
+
+.title{
+font-size:82px;
+font-family:'Orbitron',sans-serif;
+font-weight:800;
+letter-spacing:10px;
+text-transform:uppercase;
+}
+
+.subtitle{
+color:#b8b8b8;
+font-size:20px;
+line-height:1.7;
+margin-bottom:45px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:14px;
+text-decoration:none;
+color:black;
+background:white;
+padding:20px 38px;
+border-radius:18px;
+font-weight:700;
+font-size:17px;
+transition:0.3s ease;
+box-shadow:0 0 25px rgba(255,255,255,0.25);
+}
+
+.btn:hover{
+transform:translateY(-6px) scale(1.04);
+box-shadow:0 0 40px rgba(255,255,255,0.45);
+}
+
+.telegram{
+width:24px;
+height:24px;
+}
+
+.bottom{
+margin-top:35px;
+color:#666;
+font-size:14px;
+letter-spacing:3px;
+}
+
+.scanline{
+position:absolute;
+inset:0;
+background:linear-gradient(
+to bottom,
+transparent 0%,
+rgba(255,255,255,0.03) 50%,
+transparent 100%
+);
+background-size:100% 8px;
+pointer-events:none;
+opacity:0.15;
+}
+
+@media(max-width:768px){
+.container{
+padding:40px 25px;
+}
+
+.title{
+font-size:44px;
+letter-spacing:5px;
+}
+
+.subtitle{
+font-size:16px;
+}
+
+.circle{
+width:60px;
+height:60px;
+}
+
+.circle::after{
+width:28px;
+right:-15px;
+}
+
+.buttons{
+flex-direction:column;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="grid"></div>
+<div class="scanline"></div>
+
+<div class="container">
+
+<div class="logo">
+<div class="circle"></div>
+</div>
+
+<div class="title">BIG SEARCH</div>
+
+<div class="subtitle">
+Современный OSINT инструмент для поиска информации,<br>
+анализа данных и Telegram экосистема.
+</div>
+
+<div class="buttons">
+
+<a class="btn" href="https://t.me/bigsearchh_bot" target="_blank">
+<svg class="telegram" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M88 148L84 204C90 204 92 201 95 198L124 170L184 214C195 220 203 217 206 204L236 62C240 46 230 40 219 44L28 118C15 123 15 130 26 133L75 148L189 77C194 74 199 76 195 80L88 148Z" fill="black"/>
+</svg>
+БОТ
+</a>
+
+<a class="btn" href="https://t.me/bigsearchk" target="_blank">
+<svg class="telegram" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M88 148L84 204C90 204 92 201 95 198L124 170L184 214C195 220 203 217 206 204L236 62C240 46 230 40 219 44L28 118C15 123 15 130 26 133L75 148L189 77C194 74 199 76 195 80L88 148Z" fill="black"/>
+</svg>
+КАНАЛ
+</a>
+
+</div>
+
+<div class="bottom">
+BIG SEARCH • OSINT SYSTEM
+</div>
+
+</div>
+
+</body>
+</html>
